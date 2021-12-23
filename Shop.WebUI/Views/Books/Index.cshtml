@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Shop.Core.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categorie.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auteur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Editeur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEdition)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Langue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponibilite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PointsLivre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvancePoints)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Utilisateur.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categorie.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auteur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editeur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEdition)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Langue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponibilite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PointsLivre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvancePoints)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utilisateur.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
